@@ -1,5 +1,5 @@
-let router = require('express').Router();
-let sequelize = require('../db');
+const router = require('express').Router();
+const sequelize = require('../db');
 const Photo = sequelize.import('../models/photoModel');
 
 router.post('/create', (req, res) => {
@@ -23,5 +23,14 @@ router.get('/getall', (req, res) => {
         .then(photos => res.status(200).json(photos))
         .catch(err => res.status(500).json({error: err}))
 })
+
+router.get('/item/:id', (req, res) => {
+    Photo.findOne({
+        where:{id: req.params.id}
+    })
+    .then(photo => res.status(200).json(photo))
+    .catch(err => res.status(500).json({error:err}))
+})
+
 
 module.exports=router
