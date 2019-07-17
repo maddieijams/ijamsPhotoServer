@@ -2,6 +2,9 @@
   "name": "ijams-photo-client",
   "version": "1.0.0",
   "main": "index.js",
+  "engines": {
+    "node": "10.14.2"
+  },
   "dependencies": {
     "axios": "^0.18.0",
     "react": "^16.8.6",
