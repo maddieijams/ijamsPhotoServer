@@ -24,4 +24,4 @@ app.use('/address', address)
 app.use('/payment', payment);
 
   
-app.listen(3050, () => console.log(`Photo Storefront listening on port ${process.env.PORT}!`));
+app.listen(process.env.PORT || 5000, () => console.log(`Photo Storefront listening on port ${process.env.PORT}!`));
